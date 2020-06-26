@@ -1,0 +1,5 @@
+D:\Practice\Projects\HlianetsShop\DAL\bin\Debug\netcoreapp3.0\DAL.deps.json
+D:\Practice\Projects\HlianetsShop\DAL\bin\Debug\netcoreapp3.0\DAL.dll
+D:\Practice\Projects\HlianetsShop\DAL\obj\Debug\netcoreapp3.0\DAL.csprojAssemblyReference.cache
+D:\Practice\Projects\HlianetsShop\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfoInputs.cache
+D:\Practice\Projects\HlianetsShop\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfo.cs

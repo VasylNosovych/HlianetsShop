@@ -1,3 +1,4 @@
+using DAL.Models;
 using DAL.Repository;
 using DAL.Repository.Abstract;
 using HlianetsShop.Extentions;
@@ -23,7 +24,8 @@ namespace HlianetsShop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddContext(Configuration.GetConnectionString("DefaultConnection"));
-            services.AddTransient<IGenericRepository<>, GenericRepository<>>();
+            services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();
+            services.AddTransient<IGenericRepository<UserRole>, GenericRepository<UserRole>>();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

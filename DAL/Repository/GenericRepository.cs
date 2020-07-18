@@ -11,25 +11,37 @@ namespace DAL.Repository
     {
         private readonly DbSet<TEntity> _dbSet;
 
-        public IEnumerable<TEntity> GetAll() => _dbSet.ToList();
-
-        public TEntity GetEntity(Expression<Func<TEntity, bool>> predicate)
+        public GenericRepository(HlianetsContext db)
         {
-            //var db = _dbSet.Where(predicate).
-            // створити конструктор, який буде приймати DbSet від відповідної ентіті
+            _dbSet = db.Set<TEntity>();
         }
 
-        public void Create(TEntity TEntity) => db.TEntitys.Add(TEntity);
-
-        public void Update(TEntity TEntity) => db.Update(TEntity);
-        //db.Entry(TEntity).State = EntityState.Modified;
-
-        public void Delete(uint TEntityId)
+        public GenericRepository(DbSet<TEntity> entities)
         {
-            TEntity TEntity = GetById(TEntityId);
-            if (TEntity != null)
+            _dbSet = entities;
+        }
+
+        public IEnumerable<TEntity> GetAll() => _dbSet.ToList();
+
+        public TEntity GetEntity(Expression<Func<TEntity, bool>> expression)
+        {
+            return _dbSet.Where(expression).First<TEntity>();
+        }
+
+        public void Create(TEntity entity) => _dbSet.Add(entity);
+
+        public void Update(TEntity entity) => _dbSet.Update(entity);
+
+        public void Delete(uint entityId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(TEntity entity)
+        {
+            if (entity != null)
             {
-                db.TEntitys.Remove(TEntity);
+                _dbSet.Remove(entity);
             }
         }
     }

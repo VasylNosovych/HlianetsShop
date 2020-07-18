@@ -10,10 +10,12 @@ namespace DAL.Repository.Abstract
 
         TEntity GetEntity(Expression<Func<TEntity, bool>> expression);
 
-        void Create(TEntity item);
+        void Create(TEntity entity);
 
-        void Update(TEntity item);
+        void Update(TEntity entity);
 
-        void Delete(uint Id);
+        void Delete(uint entityId);
+     
+        void Delete(TEntity entity);
     }
 }

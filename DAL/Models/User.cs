@@ -1,6 +1,6 @@
 ﻿namespace DAL.Models
 {
-    public class User : IModel
+    public class User
     {
         public uint UserId { get; set; }
 

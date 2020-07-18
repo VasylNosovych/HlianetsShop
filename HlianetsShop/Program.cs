@@ -26,6 +26,7 @@ namespace HlianetsShop
                 .UseSqlServer(connectionString)
                 .Options;
 
+
             using (HlianetsContext db = new HlianetsContext(options))
             {
                 UserRole admin = new UserRole
